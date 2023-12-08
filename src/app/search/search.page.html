@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Busca Escola</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">search</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+
+      <ion-toolbar>
+        <br>
+
+        <ion-label for="nome"><h3><ion-icon aria-hidden="true" name="school" color="secondary"/> ESCOLA:</h3></ion-label>
+        <ion-input type="text" class="form-control" name="name" id="nome" [(ngModel)]="schoolForm.name"/>
+      </ion-toolbar>
+    </div>
+
+    <ion-toolbar>
+      <ion-label for="nome"><h3><ion-icon aria-hidden="true" name="keypad" color="secondary"/> CÓDIGO:</h3></ion-label>
+      <ion-input type="text" class="form-control" name="code" id="codigo" [(ngModel)]="schoolForm.code"/>
+    </ion-toolbar>
+
+    <ion-button expand="full" type="submit">Buscar</ion-button>
+
+  </form>
+</ion-content>

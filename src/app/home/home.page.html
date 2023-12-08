@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Escolas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        Lista de Escolas
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item *ngIf="getSchools().length === 0"  >
+    <h4>Nenhum resultado, faça uma nova pesquisa.</h4>
+  </ion-item>
+
+  <ion-list>
+    <app-message *ngFor="let message of getSchools()" [message]="message" [variavel]=false></app-message>
+  </ion-list>
+  <div>
+    <ion-button *ngIf="this.data.actualpage > 1" (click)="backPage()" fill="outline">Anterior</ion-button>
+    <p></p>
+    <ion-button *ngIf="this.data.nextpage" (click)="nextPage()" fill="outline" item-right>Próximo</ion-button>
+  </div>
+
+</ion-content>

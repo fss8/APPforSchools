@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="getActualRoute() === 'message'" [text]="getBackButtonText()" defaultHref="/home"></ion-back-button>
+      <ion-back-button *ngIf="getActualRoute() === 'favorite'" [text]="getBackButtonText()" defaultHref="/favorite"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="message">
+  <ion-item>
+    <ion-icon aria-hidden="true" name="school" color="primary"></ion-icon>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ message.noEntidade }}
+        <span class="date">
+          <ion-note>CÓDIGO: {{ message.coEntidade }}</ion-note>
+        </span>
+      </h2>
+      <h3>UF: <ion-note>{{message.sgUf}}</ion-note></h3>
+    </ion-label>
+  </ion-item>
+
+  <div class="ion-padding">
+    <h1>{{ message.dsEndereco }}</h1>
+
+
+
+    <p>
+      <ion-icon aria-hidden="true" name="globe" color="secondary"/> Região: {{ message.noRegiao }}<br>
+      <ion-icon aria-hidden="true" name="keypad-outline" color="secondary"/> Código Municipio: {{ message.coMunicipio }}<br>
+      <ion-icon aria-hidden="true" name="grid" color="secondary"/> Rede: {{message.rede}} <br>
+      <ion-icon aria-hidden="true" name="id-card-outline" color="secondary"/> Telefone: DDD: {{message.nuDdd}} : {{ message.nuTelefone }} <br>
+      <ion-icon aria-hidden="true" name="business-sharp" color="secondary"/> CEP: {{ message.coCep }} <br>
+      <ion-icon aria-hidden="true" name="locate" color="secondary"/> Localizacao: {{message.localizacao}} <br>
+      <ion-icon aria-hidden="true" name="map-outline" color="secondary"/> (Latitude,Longitude): ({{message.latitude}}, {{ message.longitude }})
+    </p>
+    <ion-button (click)="saveFavorite(message)" *ngIf="isFavorite(message.coEntidade) === false">Salvar</ion-button>
+    <ion-button (click)="removeFavorite(message.coEntidade)" *ngIf="isFavorite(message.coEntidade) === true">remover</ion-button>
+  </div>
+</ion-content>
