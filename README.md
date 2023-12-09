@@ -35,6 +35,6 @@ App for query, list and save favorite schools
 ## Para executar no Android Studio(livereload):
 ### `ionic cap run android -l --external`
 
-#Visualização:
+# Visualização:
 ![image](https://github.com/fss8/APPforSchools/assets/51828330/dd0312f6-d340-45f7-8e4e-b8daa2966a8e)
 
