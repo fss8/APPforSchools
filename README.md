@@ -4,16 +4,16 @@ App for query, list and save favorite schools
 
 # Como rodar
 
-### Com NodeJS instalado
+### Com 'NodeJS' instalado
 
 ## Execute os seguintes comandos para iniciar
 
 ### `npm install -g @ionic/cli`
+### `npm install @capacitor/android`
 ### `ionic build`
 
 ## Para o Android Studio
 
-#### `npm install @capacitor/android`
 #### `npx cap add android`
 #### `npx cap copy`
 #### `npx cap sync`
@@ -34,5 +34,3 @@ App for query, list and save favorite schools
 
 ## Para executar no Android Studio(livereload):
 ### `ionic cap run android -l --external`
-
-
