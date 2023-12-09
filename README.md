@@ -4,7 +4,7 @@ App for query, list and save favorite schools
 
 # Como rodar
 
-### Com 'NodeJS' instalado
+### Com 'NodeJS' LTS instalado  (https://nodejs.org/en/download/) 
 
 ## Execute os seguintes comandos para iniciar
 
